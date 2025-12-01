@@ -34,10 +34,9 @@ let f;
 const i = Symbol();
 const j = Symbol();
 
-// 8] OBJECT : non primitive data type
+// 8] OBJECT (very important in js)
 const person = {firstName:"John", lastName:"Doe"};
 // Array object
 const cars = ["Saab", "Volvo", "BMW"];
 // Date object
 const date = new Date("2022-03-25");
-
