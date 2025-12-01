@@ -1,0 +1,42 @@
+Here Two types of memory is there 
+1] Stack memory [primitive]
+2] Heap memory  [non primitive]
+
+
+                                                                            ______________
+1️. STACK MEMORY  (Primitive Data Types)                                     |_____________|
+    Stack ek chhota, fast memory area hota hai.                             |_____________|
+    Yahaan sirf primitive values store hoti hain:                           |_____________|
+        • Number                                                            |_____________|
+        • String                                                                STACK
+        • Boolean
+        • Null
+        • Undefined
+        • Symbol
+        • BigInt
+    Stack copy-by-value hota hai:   
+        let a = 10;
+        let b = a;   // b me 10 ki copy aati hai, reference nahi
+    Matlab a change karne se b pe koi farq nahi padta.
+
+2️. HEAP MEMORY (Non-Primitive Data Types)                                   ________________
+    Heap ek bada memory area hota hai jahan objects store hote hain.        |               |
+    Isme non-primitive (reference type) store hote:                         |               |
+        • Object {}                                                         |               |
+        • Array []                                                          |_______________|
+        • Function ()                                                            HEAP
+        • Date
+        • Map / Set
+        • etc.
+    Heap copy-by-reference hota hai:
+        let obj1 = { name: "A" };
+        let obj2 = obj1;   // obj2 same reference ko point karega
+    Matlab obj2 me change karoge to obj1 bhi change hoga,
+    kyunki dono same memory address ko refer kar rahe hain.
+
+
+SHORT SUMMARY
+    Primitive → Stack → Copy by value  (Alag copy)
+    Non-primitive → Heap → Copy by reference  (Same reference)
+    Stack = Fast, Simple  & Value store 
+    Heap = Large, Slower  & Address store  
