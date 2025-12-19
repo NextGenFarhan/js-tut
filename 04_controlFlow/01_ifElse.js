@@ -18,3 +18,16 @@ if(score>180) {
 } else {
     // console.log("Error detected no power fly")
 }
+
+
+// Nullish Coalescing Operator (??): null undefined
+let val1;
+// val1 = 5 ?? 10;
+// val1 = null ?? 10;
+val1 = undefined ?? 10;
+// console.log(val1)
+
+// Terniary operator
+// condition ? true : false 
+const ice = 100
+// ice >= 80 ? console.log("More than 80") : console.log("less than 80")
