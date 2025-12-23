@@ -1,0 +1,52 @@
+Event Propagation:
+------------------
+Jab kisi element par event (jaise click) hota hai,
+toh browser us event ko DOM ke through upar-neeche
+travel karata hai. Is process ko Event Propagation kehte hain.
+
+Browser bolta hai:
+"Click hua hai, ab mai ye event sab related elements ko bataunga."
+
+Event Propagation ke 3 phases hote hain:
+
+    1) Capturing Phase (Top → Down)
+        • Event upar se neeche travel karta hai
+        • Order:
+            Grandparent → Parent → Child
+        • Is phase me sirf wahi event listener chalta hai jisme third parameter = true diya ho
+        Example: addEventListener("click", handler, true)
+
+    2) Target Phase
+        • Event actually jis element par hua
+        • Example: button par click
+        • Is phase me true / false ka koi role nahi hota
+        • Direct us element ka listener execute hota hai
+
+    3) Bubbling Phase (Down → Top)
+        • Event neeche se upar wapas jata hai
+        • Order:
+            Child → Parent → Grandparent
+        • Is phase me false wale listeners chalte hain
+        • false default hota hai
+        Example: addEventListener("click", handler, false)
+
+
+
+COMMON EVENT METHODS
+    1. stopPropagation()
+        → Event ko parent/child tak jaane se rokta hai
+        → Parent ya child ke events nahi chalne deta
+    2. stopImmediatePropagation()
+        → Same element ke baaki listeners bhi rok deta hai
+    3. preventDefault()
+        → ka kaam hota hai browser ka default action rokna
+        → Browser ka default action rokta hai
+        → Examples: Form submit rokna, Link redirect rokna
+    4. defaultPrevented()
+        → Check karta hai ki preventDefault() call hua hai ya nahi
+        → Property (boolean value) hai
+    4. event.target
+        → Jahan actual click hua
+        → Mostly event delegation me use hota hai
+    5. event.currentTarget
+        → Jahan listener laga hai

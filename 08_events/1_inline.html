@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style> 
+        div {
+            width: 250px;
+            height: 250px;
+            background-color: purple;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid black;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- INLINE EVENT HANDLING -->
+    <div onmouseover="console.log('You are on div')">
+        <p>The change in the state of the object</p>
+        <ul>
+            <p>Types of events are given below</p>
+            <li>Mouse events</li>
+            <li>Keyboard events</li>
+            <li>Form events</li>
+            <li>Print events</li>
+            <p>And many more....</p>
+        </ul>
+    </div>
+    <button onclick="console.log('Button was clicked');alert('Are you sure?')">click me!</button>
+    <button ondblclick="console.log('Button was clicked');">click me 2 times</button>
+</body>
+</html>
+
+
+    
+    <!-- <script src="09Events.js"></script> -->
+
+    <!-- priority: inline handling < js handling -->
+     <!-- this -->
+    <!-- <button id="btn1" onclick="console.log('hello')">click me!</button>
+    <div>I am a div</div> -->
+
+
+    <!-- <script src="09event.js"></script> -->
+    <!-- <script src="09Event1.js"></script> -->

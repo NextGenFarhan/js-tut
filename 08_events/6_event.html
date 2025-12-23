@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Proporgation</title>
+  </head>
+  <body>
+    <div id="grandparent">
+      <div id="parent">
+        <button id="child">Click me</button>
+      </div>
+    </div>
+    
+    <script>
+      document.getElementById("grandparent")
+        .addEventListener(
+          "click",
+          () => console.log("Grandparent - Capturing"),
+          true);
+
+      document.getElementById("parent")
+        .addEventListener(
+          "click",
+          () => console.log("Parent - Capturing"),
+          true);
+
+      document.getElementById("child")
+        .addEventListener("click", 
+        () => console.log("Child - Target"));
+
+      document.getElementById("parent")
+        .addEventListener(
+          "click",
+          () => console.log("Parent - Bubbling"),
+          false);
+
+      document.getElementById("grandparent")
+        .addEventListener(
+          "click",
+          () => console.log("Grandparent - Bubbling"),
+          false);
+
+    </script>
+  </body>
+</html>
