@@ -1,9 +1,0 @@
-Java Script is synchronous(ek ke baad ek) and has single threaded 
-
-Execution context:
-    execute one code at a time.
-    Each operation waits for the last one to complete the task
-
-    Blocking Code                   | Non-Blocking Code
-1.  block the flow of the program   | Does Not block Execution
-2.  Read File Sync                  | Read file Async

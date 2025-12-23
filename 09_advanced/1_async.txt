@@ -1,0 +1,128 @@
+JAVASCRIPT ASYNC CONCEPTSJavaScript is:
+    - Synchronous by default (ek ke baad ek)
+    - Single Threaded (ek hi call stack hota hai)
+
+SYNCHRONOUS EXECUTION:
+    - JS ek time pe sirf ek hi kaam karta hai
+    - Jab tak current task complete nahi hota, next task start nahi hota
+    - Isse program slow ho sakta hai agar koi task heavy ho
+
+WHY ASYNC IS NEEDED?
+    - JavaScript single-threaded hai
+    - Long tasks agar main thread pe chale to UI hang ho jaati hai
+    - Async allow karta hai: "background me kaam + main thread free"
+
+
+JavaScript async programming allows long-running
+tasks to run in background without blocking
+the main thread using Event Loop.
+
+
+EXECUTION CONTEXT:
+    - JavaScript code Execution Context ke andar run hota hai
+    - Ek time pe sirf ek execution context active hota hai
+    - Code line by line execute hota hai
+
+_________________________________________________________________________________________
+|            BLOCKING CODE                   |           NON-BLOCKING CODE:              |
+|----------------------------------------------------------------------------------------|
+|    - Program ka flow rok deta hai          |   - Program ka flow block nahi karta      |
+|    - Jab tak task complete nahi hota,      |   - Task background me chala jata hai     |
+|    aage ka code wait karta hai             |   - Main thread free rehta hai            |
+|    - UI freeze ho sakta hai                |   - UI responsive rehti hai               |
+|    Example:                                |   Example:                                |
+|    - Read File Sync                        |   - Read File Async                       |   
+|    - Heavy calculations                    |   - setTimeout  AND fetch / API calls     |
+------------------------------------------------------------------------------------------
+
+
+====================
+CALL STACK
+====================
+- JavaScript ka main execution area
+- Functions yahin push aur pop hote hain
+- Stack LIFO (Last In First Out) follow karta hai
+
+====================
+WEB APIs
+====================
+- Browser provide karta hai (JS ka part nahi)
+- setTimeout, fetch, DOM events
+- Async tasks yahin handle hote hain
+
+====================
+CALLBACK QUEUE
+====================
+- Async tasks complete hone ke baad
+- Callback yahan wait karta hai
+- FIFO (First In First Out)
+
+====================
+EVENT LOOP
+====================
+- Event Loop check karta hai:
+    1. Call Stack empty hai ya nahi
+    2. Callback Queue me kuch hai ya nahi
+- Agar stack empty ho,
+    to callback stack me push hota hai
+     ____________________________________________________
+    |Event Loop continuously checks the call stack       |
+    |and callback queue, and pushes async callbacks      |
+    |into the call stack when it is empty.               |
+    |____________________________________________________|
+
+====================
+CALLBACK FUNCTION
+====================
+- Function jo baad me execute hota hai
+- Async operations ke saath use hota hai
+    CALLBACK HELL:
+        - Callbacks ke andar callbacks
+        - Code unreadable ho jata hai
+        - Maintenance difficult ho jaata hai
+
+====================
+PROMISES
+====================
+- Callback hell ka solution
+- Promise ek object hota hai
+    Promise States:
+        1. Pending
+        2. Fulfilled
+        3. Rejected
+    _________________________________________________
+    |A Promise represents the eventual completion    |   
+    |or failure of an asynchronous operation.        |
+    |________________________________________________|
+
+====================
+ASYNC / AWAIT
+====================
+- Promises ka cleaner syntax
+- Code synchronous jaisa dikhta hai
+- Internally async hi hota hai
+----------------------------------------------------
+- async function hamesha promise return karta hai   |
+- await sirf async function ke andar use hota hai   |
+- await promise resolve hone ka wait karta hai      |
+____________________________________________________|
+
+====================
+ERROR HANDLING
+====================
+- Promises: .catch()
+- Async/Await: try-catch
+
+        |================================|
+        |IMPORTANT INTERVIEW QUESTIONS   |
+        |================================|
+
+Q1: Is JavaScript synchronous?
+    Ans: Yes, JavaScript is synchronous and single-threaded by default.
+Q2: Then how async works?
+    Ans: Using Web APIs, Callback Queue and Event Loop.
+Q3: What is Event Loop?
+    Ans: Mechanism jo async callbacks ko call stack me execute karwata hai.
+Q4: Difference between blocking and non-blocking?
+    Ans: Blocking: Execution ruk jata hai Non-blocking: Execution nahi rukta
+
